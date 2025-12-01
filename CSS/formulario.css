@@ -1,0 +1,60 @@
+.logo{
+    background-color: orange;
+    border-radius: 0 0 10px 10px;
+
+}
+.logo img{
+    width: 100px;
+    height: 80px;
+}
+
+.btn-puja{
+    background-color: white;
+    border-color: black;
+    color: black;
+    font-weight: 500;
+}
+.btn-puja:hover{
+    background-color: orange;
+    border-color: #ff9800;
+    color: #ffffff;
+}
+
+.footer {
+background: #1a1a1a;
+color: white;
+text-align: center;
+}
+
+
+.social-icons {
+display: flex;
+justify-content: center;
+gap: 1.2rem;
+margin: 0.8rem 0;
+}
+.social-icons a i{
+    color: white;
+}
+.social-icons a i:hover{
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+transform: translateY(-10px) scale(1.2); /* se eleva y agranda */
+color: #ff9d00; /* Cambia a color de Puja */
+}
+.libro a i{
+    color: white;
+}
+.libro a i:hover{
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+transform: translateY(-10px) scale(1.2);
+color: #ff9d00; /* Cambia a color de Puja */
+}
+
+
+.footer-bottom img {
+width: 25px;
+height: 30px;
+margin-bottom: 2px;
+}
+
+

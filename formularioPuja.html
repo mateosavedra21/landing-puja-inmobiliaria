@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="icon" href="imagenes/favicon.png">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="CSS/formulario.css">
+</head>
+<body>
+
+    <header class="logo">
+        <div class="container-fluid ">
+            <div class="d-flex align-items-center justify-content-between px-3">
+               
+                    <img src="imagenes//logoblanco_puja.svg" alt="puja" class="logo-img">
+                   <button class="btn btn-outline-light">
+                    <i class="fa-solid fa-user me-1"></i>
+                    Iniciar sesión
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    
+    <section class="formulario py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-6 col-lg-6">
+
+                <h1 class="text-center mb-3">Contáctate con nosotros</h1>
+
+                <p class=" text-center text-muted mb-4">Completa los datos y un asesor de Puja inmobiliaria se pondrá en contacto contigo.</p>
+
+                <div class="p-4 border rounded-3 shadow-sm bg-white">
+                    <form action="">
+                        <div class="mb-3">
+                        <label for="name" class="form-label">Nombre completo:
+                        </label>
+                        <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        class="form-control" 
+                        placeholder="Ej: Mateo Saavedra" 
+                        required
+                        >
+                        </div>
+
+                        <div class="row">
+
+                        <div class=" col-12 col-md-6 mb-3">
+                            <label for="celular" class="form-label"> Celular / WhatsApp: </label>
+                            <input 
+                            type="tel" 
+                            id="celular" 
+                            name="celular" 
+                            class="form-control"
+                            placeholder="Ej: 960 111 080"
+                            required
+                            >
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="correo" class="form-label">Correo electrónico:</label>
+                            <input 
+                            type="email" 
+                            id="correo" 
+                            name="correo" 
+                            class="form-control"
+                            placeholder="tucorreo@ejemplo.com"
+                            required
+                            >
+
+                        </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="tipoConsulta" class="form-label">Tipo de consulta:</label>
+                            <select name="tipoConsulta" id="tipoConsulta" class="form-select">
+                                <option value="" selected disabled>Selecciona una opción</option>
+                                <option value="soporte">Soporte del uso del servicio</option>
+                                <option value="sugerencias">Sugerencias y comentarios</option>
+                                <option value="reportar">Reportar un problema</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="detalleConsulta" class="form-label">Detalle de tu consulta(otros):</label>
+                            <textarea 
+                            name="detalleConsulta" 
+                            id="detalleConsulta" 
+                            class="form-control" 
+                            rows="5" 
+                            placeholder="Escribe aqui si presionaste en otros:"
+                            ></textarea>
+                        </div>
+
+                            <button type="submit" class="btn btn-puja w-100">
+                            <i class="fa-solid fa-paper-plane me-2"></i>Enviar consulta 
+                            </button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="footer">
+
+  <div class="container py-5">
+    <div class="row align-items-center">
+
+
+      <div class="col-12 col-md-3 text-center text-md-start mb-4 mb-md-0">
+        <a href="https://pujainmobiliaria.com.pe/">
+          <img src="imagenes/logoblanco_puja.svg" class="img-fluid" alt="Puja Inmobiliaria">
+        </a>
+      </div>
+
+   
+      <div class="col-12 col-md-6 text-center mb-4 mb-md-0">
+        <h3>Ubícanos</h3>
+        <p>
+          Av. Canaval y Moreyra 290<br>
+          Oficina No 41 y 42<br>
+          Cuarto Piso, San Isidro<br>
+          consulta@pujainmobiliaria.com.pe<br>
+          +51 902 759 899
+        </p>
+      </div>
+
+
+      <div class="col-12 col-md-3 text-center ">
+        <h3>Síguenos</h3>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank"><i class="iconos fa-brands fa-facebook fa-2x"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="iconos fa-brands fa-instagram fa-2x"></i></a>
+          <a href="https://www.tiktok.com" target="_blank"><i class="iconos fa-brands fa-tiktok fa-2x"></i></a>
+        </div>
+
+        <div class="libro mt-2">
+          <a href="https://pujainmobiliaria.com.pe/libro-reclamaciones">
+            <i class="fa-solid fa-book fa-2x"></i>
+          </a>
+          <p class="mb-0">Libro de reclamaciones</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="footer-bottom border-top mt-4 pt-3 d-flex justify-content-center">
+    <div class="row text-center">
+      <div class="col-12">
+        <p>© 2024 Corporación Grupo Imagen SAC
+          <img src="imagenes/peru.svg" alt="Bandera Perú">
+        </p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+</body>
+</html>

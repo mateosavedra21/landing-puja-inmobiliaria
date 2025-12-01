@@ -1,0 +1,238 @@
+.logo {
+    background-color: rgb(248, 141, 0);
+    border-radius: 0 0 25px 25px;
+}
+.logo img{
+    height: 80px;
+    width: auto;
+}
+
+.titulo h2{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 1;
+    letter-spacing: 7px;
+}
+
+/*BANNER*/
+
+/* Fondo con imagen y altura del hero */
+.banner {
+    background-image: url("../imagenes/lima-peru-november-21st-2024-600nw-2549247971.webp");
+    background-size: cover;       /* que la imagen cubra todo */
+    background-position: center;    /* centrada */
+    background-repeat: no-repeat;   /* que no se repita */
+    height: 500px;
+    display: flex;              /* para centrar vertical */
+    align-items: center;            /* centra el contenido vertical dentro del section */
+    color: #fff;                    /* texto blanco por defecto */
+    position: relative;               /*Mantiene a los elementos en su posicion*/
+}
+
+/* Opcional: oscurecer un poco el fondo para que el texto se lea mejor */
+.banner::before /* pseudo-elemento(dato: solo existe en el css)*/ {
+    content: "";          /* Crea la capa*/
+    position: absolute;   /* se pega a todo el banner, no al contenido */
+    inset: 0;                       /* top:0 right:0 bottom:0 left:0(Hace que el ::before ocupe todo el ancho y alto del elemento padre"banner")*/
+    background: rgba(255, 255, 255, 0.096);
+    z-index: 0; 
+}
+
+/* Todo el contenido dentro del banner por encima del overlay(capa encima del fondo) */
+.banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+/*  TEXTOS (botones blancos/naranjas)  */
+
+.titulo-1,
+.titulo-2 {
+    display: inline-block;      /* que se comporten como “botones” */
+    padding: 12px 26px;         /* alto y ancho interno */
+    border-radius: 999px;       /* súper redondo (píldora) */
+    font-weight: 700;           /* negrita */
+    font-size: 1.4rem;
+}
+
+.titulo-1 {
+    background-color: #ffffff;
+    color: #f3651f;             
+    margin-bottom: 8px;
+}
+
+.titulo-2 {
+    background-color: #f3651f;
+    color: #ffffff;
+}
+
+
+
+/* En pantallas pequeñas, separa un poco el texto del celular */
+@media (max-width: 767.98px) {
+    .banner .col-12.col-md-6.col-lg-7 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Contenedor del mockup (celular/laptop) */
+.laptop {
+    position: relative;       /* necesario para posicionar la pantalla dentro */
+    display: inline-block;
+}
+
+/* Imagen del mockup en sí (marco del celular/laptop) */
+.laptop-imagen {
+    max-width: 100%;          /* que nunca se pase del ancho de la columna */
+    height: auto;
+    display: block;
+    margin: 0 auto;           /* centrado */
+}
+
+/* Zona donde se muestra el carrusel dentro del mockup */
+.laptop-screen {
+    position: absolute;
+    /* estos valores debes ajustarlos según tu PNG del celular/laptop */
+    top: 6%;                  /* distancia desde arriba */
+    left: 11%;                /* distancia desde la izquierda */
+    width: 78%;               /* ancho de la “pantalla” */
+    height: 88%;              /* alto de la “pantalla” */
+
+    overflow: hidden;         /* que el contenido no se salga del marco */
+    border-radius: 25px;      /* esquinas redondeadas de la pantalla */
+}
+
+/* Asegurar que las imágenes del carrusel llenen la pantalla del mockup */
+.laptop-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* recorta sin deformar */
+}
+
+
+
+
+/*Tarjetas*/
+.feature-card {
+    background: #ffffff;              /* fondo blanco de la tarjeta */
+    border-radius: 12px;              /* esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* sombra suave */
+    text-align: center;               /* centra h3 y p */
+    max-width: 320px;                 /* ancho máximo de la tarjeta */
+}
+.feature-icon {
+    width: 64px;                      /* ancho del círculo */
+    height: 64px;                     /* alto del círculo */
+    border-radius: 50%;               /* lo convierte en círculo */
+    background: #ff6a00;              /* color corporativo (ejemplo) */
+    display: flex;                    /* para centrar el icono dentro */
+    align-items: center;              /* centra verticalmente el <i> */
+    justify-content: center;          /* centra horizontalmente el <i> */
+}
+.feature-icon i {
+    font-size: 2rem;                /* tamaño del icono */
+    color: #ffffff;                   /* icono en blanco */
+}
+
+
+
+.video_container{
+    max-width: 360px;
+    aspect-ratio: 9/16;
+    margin: auto;
+    overflow: hidden;
+}
+
+.video_container iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+
+
+
+.post_puja{
+    background-image: url("../imagenes/fondoManos.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     height: 400px;
+    display: flex;              /* para centrar vertical */
+    align-items: center;            /* centra el contenido vertical dentro del section */       
+    position: relative;               /*Mantiene a los elementos en su posicion*/
+}
+.post_puja img{
+    height: auto;
+    width: 350px;
+
+}
+
+
+
+/* Pulso constante */
+#clicqui {
+  animation: pulso 1.6s ease-in-out infinite;
+  transform-origin: center;
+  display: inline-block; /* asegura que el transform se aplique bien */
+}
+
+/* Definición del latido */
+@keyframes pulso {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(0,0,0,0.15));
+  }
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
+  }
+}
+
+/* Accesibilidad: respeta usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  #clicqui { animation: none; }
+}
+
+
+
+
+.footer {
+background: #1a1a1a;
+color: white;
+text-align: center;
+}
+
+
+.social-icons {
+display: flex;
+justify-content: center;
+gap: 1.2rem;
+margin: 0.8rem 0;
+}
+.social-icons a i{
+    color: white;
+}
+.social-icons a i:hover{
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+transform: translateY(-10px) scale(1.2); /* se eleva y agranda */
+color: #ff9d00; /* Cambia a color de Puja */
+}
+
+.libro a i{
+    color: white;
+}
+.libro a i:hover{
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+transform: translateY(-10px) scale(1.2);
+color: #ff9d00; /* Cambia a color de Puja */
+}
+
+
+.footer-bottom img {
+width: 25px;
+height: 30px;
+margin-bottom: 2px;
+}
+

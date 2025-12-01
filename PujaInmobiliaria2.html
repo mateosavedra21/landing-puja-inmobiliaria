@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puja inmobiliaria</title>
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+       
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/puja.css">
+</head>
+<body>
+    <header class="logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="imagenes/logo_puja-blanco.webp" alt="Logo" class="logo-img img-fluid py-2">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="titulo">
+        <h2 class=" text-center text-muted py-lg-4 py-3 ">
+            <b>TU PROPIEDAD, TU PRECIO</b>
+        </h2>
+
+    </section>
+
+    <section class=" banner">
+        <div class="container">
+            <div class="row align-items-center justify-content-center
+            h-100 text-center">
+
+            <div class="col-7 col-md-6 col-lg-7">
+            <div>
+                <span class="titulo-1">!ANUNCIA, ALQUILA</span>
+                <br>
+                <span class="titulo-2">Y VENDE TUS PROPIEDADES!</span>
+            </div>
+            </div>
+
+
+            <div class="col-5 col-md-6 col-lg-5">
+                <div class="laptop"
+                data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+
+
+                <img src="imagenes/laptop.webp" alt="Laptop" class="laptop-imagen d-none d-md-block">
+                <img src="imagenes/celular.webp" alt="Laptop" class="laptop-imagen d-block d-md-none ">
+
+
+                <div class="laptop-screen">
+                    <div id="laptopCarousel" class="carousel slide"
+                    data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+
+
+                        <div class="carousel-item active"> 
+                            <img src="imagenes/image1.webp" class="d-block w-100 d-none d-md-block" alt="Página 1">
+                                    <img src="imagenes/celular1.webp" class="w-100 d-block d-md-none" alt="Página 1">
+                        </div>
+                          <div class="carousel-item"> 
+                            <img src="imagenes/image2.webp" class="d-block w-100 d-none d-md-block" alt="Página 2">
+                                    <img src="imagenes/celular3.webp" class=" w-100 d-block d-md-none" alt="Página 2">
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="imagenes/image4.webp" class="d-block w-100 d-none d-md-block" alt="Página 3">
+                                    <img src="imagenes/celular4.webp" class=" w-100 d-block d-md-none" alt="Página 3">
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="imagenes/image3.webp" class="d-block w-100 d-none d-md-block" alt="Página 4">
+                                    <img src="imagenes/celular3.webp" class=" w-100 d-block d-md-none" alt="Página 4">
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="imagenes/image2.webp" class="d-block w-100 d-none d-md-block" alt="Página 5">
+                                    <img src="imagenes/celular3.webp" class=" w-100 d-block d-md-none" alt="Página 5">
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="imagenes/image4.webp" class="d-block w-100 d-none d-md-block" alt="Página 6">
+                                    <img src="imagenes/celular4.webp" class=" w-100 d-block d-md-none" alt="Página 6">
+                        </div>                   
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+ <section class="features py-5 bg-light">
+    <div class="container h-100">
+        <div class="row align-items-center justify-content-evenly">
+            <div class="col-md-6 col-lg-3 col-12"></div>
+            <div class="col-md-6 col-lg-4 col-8 text-center"> <h2>VISITANTE N° <span id="visitante-visualizo" class="counter"></span></h2></div>
+        </div>
+
+        <div class="row align-items-center justify-content-evenly">
+            <div class="col-md-6 col-lg-3 col-12 text-center order-md-1 order-0">
+                
+                <div class="feature-card p-4 mb-4 mx-auto" data-aos="fade-right" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <div class="feature-icon text-white mb-3 mx-auto">
+                    <i class="fa-solid fa-person-running" aria-hidden="true"></i>
+                </div>
+                <h3>Rápido</h3>
+                <p>Publica tu propiedad fácil y rápido</p>
+                </div>
+
+                <div class="feature-card p-4 mb-4 mx-auto"
+                data-aos="fade-right" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <div class="feature-icon text-white mb-3 mx-auto">
+                    <i class="fa-solid fa-check" aria-hidden="true"></i>
+                </div>
+                <h3>Seguro</h3>
+                <p>Tu información está protegida con nosotros</p>
+                </div>
+
+                <div class="feature-card p-4 mb-3 mx-auto"
+                data-aos="fade-right" data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <div class="feature-icon text-black mb-3 mx-auto">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+                <h3>Confiable</h3>
+                <p>Puedes vender tus propiedades con la opcion <b>"PUJA"</b>, en subasta y al mejor postor</p>
+                </div>
+            </div>
+
+
+          <!-- Video de Puja Inmobiliaria -->
+            <div class="col-md-6 col-lg-4 col-8  text-center order-0 order-md-1 position-relative">
+                <div class="video_container">
+                <iframe src="https://www.youtube.com/embed/KW97nqMqmhc" frameborder="0"                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+<!-- 
+accelerometer → permite que el contenido use el acelerómetro (en móviles, girar, mover el dispositivo).
+
+autoplay → permite que el video pueda reproducirse solo (YouTube a veces lo usa).
+
+clipboard-write → permite escribir en portapapeles (copiar algo) si el contenido lo pide.
+
+encrypted-media → permite reproducir contenido protegido (DRM, como algunas canciones o videos).
+
+gyroscope → permite usar giro del dispositivo (como juegos o experiencias 360).
+
+picture-in-picture → permite que el video se pueda sacar a una mini ventanita flotante (PIP). -->
+                </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+
+ <section class="post_puja py-5 position-relative">
+    <div class="container">
+        <div class=" row align-items-center text-center">
+            <div class="col-12 col-md-6 col-lg-3 mx-auto">
+                <a href="https://pujainmobiliaria.com.pe" target="_blank">
+                    <img src="imagenes/clicqui.webp" class="img-fluid"
+                    id="clicqui" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+
+
+<footer class="footer">
+
+  <div class="container py-5">
+    <div class="row align-items-center">
+
+
+      <div class="col-12 col-md-3 text-center text-md-start mb-4 mb-md-0">
+        <a href="https://pujainmobiliaria.com.pe/">
+          <img src="imagenes/logoblanco_puja.svg" class="img-fluid" alt="Puja Inmobiliaria">
+        </a>
+      </div>
+
+   
+      <div class="col-12 col-md-6 text-center mb-4 mb-md-0">
+        <a href="formularioPuja.html" target="_blank" class="btn btn-outline-light ">Contáctanos</a>
+        <p>
+          Av. Canaval y Moreyra 290<br>
+          Oficina No 41 y 42<br>
+          Cuarto Piso, San Isidro<br>
+          consulta@pujainmobiliaria.com.pe<br>
+          +51 902 759 899
+        </p>
+      </div>
+
+
+      <div class="col-12 col-md-3 text-center ">
+        <h3>Síguenos</h3>
+
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank"><i class="iconos fa-brands fa-facebook fa-2x"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="iconos fa-brands fa-instagram fa-2x"></i></a>
+          <a href="https://www.tiktok.com" target="_blank"><i class="iconos fa-brands fa-tiktok fa-2x"></i></a>
+        </div>
+
+        <div class="libro mt-2">
+          <a href="https://pujainmobiliaria.com.pe/libro-reclamaciones">
+            <i class="fa-solid fa-book fa-2x"></i>
+          </a>
+          <p class="mb-0">Libro de reclamaciones</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="footer-bottom border-top mt-4 pt-3 d-flex justify-content-center">
+    <div class="row text-center">
+      <div class="col-12">
+        <p>© 2024 Corporación Grupo Imagen SAC
+          <img src="imagenes/peru.svg" alt="Bandera Perú">
+        </p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+</body>
+</html>
