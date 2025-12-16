@@ -36,53 +36,11 @@
             <th>Celular</th>
             <th>Correo</th>
             <th>Tipo</th>
-            <th style="width:120px" class="text-center">Estado</th>
             <th class="text-center">Editar</th>
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
-            <td class="text-center">1</td>
-            <td>Mateo Saavedra</td>
-            <td>960111080</td>
-            <td>mateo@email.com</td>
-            <td>Soporte</td>
-            <td class="text-center"><span class="badge bg-success">Atendido</span></td>
-           <td class=" text-center justify-content-between">
-            <i class="fa-solid fa-pen-to-square me-3" role="button"></i>
-            <i class="fa-solid fa-trash" role="button"></i>
-          
-          </td>
-          </tr>
-
-          <tr>
-            <td class="text-center">2</td>
-            <td>Ana Torres</td>
-            <td>992114765</td>
-            <td>ana@email.com</td>
-            <td>Sugerencias</td>
-            <td class="text-center"><span class="badge bg-warning text-dark">Pendiente</span></td>
-                       <td class=" text-center justify-content-between">
-            <i class="fa-solid fa-pen-to-square me-3" role="button"></i>
-            <i class="fa-solid fa-trash" role="button"></i>
-          
-          </td>
-          </tr>
-
-          <tr>
-            <td class="text-center">3</td>
-            <td>Carlos Díaz</td>
-            <td>990101344</td>
-            <td>carlos@email.com</td>
-            <td>Otros</td>
-            <td class="text-center"><span class="badge bg-secondary">Nuevo</span></td>
-                       <td class=" text-center justify-content-between">
-            <i class="fa-solid fa-pen-to-square me-3" role="button"></i>
-            <i class="fa-solid fa-trash" role="button"></i>
-          
-          </td>
-          </tr>
+        <tbody id="tabla-consultas">
         </tbody>
 
       </table>
@@ -93,5 +51,66 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+  obtenerBandidos();
+
+  function obtenerBandidos() {
+    fetch('http://127.0.0.1:8000/api/obtener-bandidos')
+      .then(response => response.json())
+      .then(data => {
+
+        const tbody = document.getElementById('tabla-consultas');
+        tbody.innerHTML = '';
+
+        data.data.forEach((item, index) => {
+          tbody.innerHTML += `
+            <tr>
+              <td class="text-center">${index + 1}</td>
+              <td>${item.nombre_apellido}</td>
+              <td>${item.celular}</td>
+              <td>${item.correo}</td>
+              <td>${item.tipo_consulta ?? '-'}</td>
+              <td class="text-center">
+                
+                  <i class="fa-solid fa-pen-to-square me-2"></i>
+                
+                <button class="btn" onclick="eliminar(${item.id})">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+
+  function eliminar(id) {
+    fetch(`http://127.0.0.1:8000/api/eliminar-bandido/${id}`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      // Check if the request was successful (e.g., status 200, 204)
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      console.log('Delete successful');
+      // Many DELETE endpoints return no content (204 No Content), so response.json() might fail.
+
+
+      obtenerBandidos();
+    })
+    .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+    });
+  }
+</script>
+
+
 </body>
 </html>
