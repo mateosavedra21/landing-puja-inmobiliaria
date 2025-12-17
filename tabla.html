@@ -50,6 +50,45 @@
   </div>
 </div>
 
+
+<div class="modal fade" id="modalEditar" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Consulta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <input id="edit-name" class="form-control mb-2" placeholder="Nombre">
+        <input id="edit-celular" class="form-control mb-2" placeholder="Celular">
+        <input id="edit-correo" class="form-control mb-2" placeholder="Correo">
+                <!-- Tipo -->
+        <select id="edit-tipo" class="form-select mb-2">
+          <option value="soporte">Soporte</option>
+          <option value="sugerencias">Sugerencias</option>
+          <option value="reportar">Reportar problema</option>
+          <option value="otros">Otros</option>
+        </select>
+
+        <!-- Detalle (solo si es Otros) -->
+        <textarea
+          id="edit-detalle"
+          class="form-control d-none"
+          rows="4"
+          placeholder="Detalle (solo si es Otros)">
+        </textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-primary" onclick="guardarEdicion()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -72,11 +111,14 @@
               <td>${item.celular}</td>
               <td>${item.correo}</td>
               <td>${item.tipo_consulta ?? '-'}</td>
+              
               <td class="text-center">
                 
-                  <i class="fa-solid fa-pen-to-square me-2"></i>
+            <button type="button" class="btn btn-sm btn-outline-primary me-2" onclick="abrirEditar(${item.id}, '${item.nombre_apellido}', '${item.celular}', '${item.correo}')">
+           <i class="fa-solid fa-pen-to-square"></i>
+            </button>
                 
-                <button class="btn" onclick="eliminar(${item.id})">
+                <button type="button" class="btn btn-sm btn-outline-danger" onclick="eliminar(${item.id})">
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </td>
@@ -109,6 +151,53 @@
       console.error('There has been a problem with your fetch operation:', error);
     });
   }
+
+
+  function editar(id) {
+  fetch(`http://127.0.0.1:8000/api/editar-bandido/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: 'Nombre editado',
+      celular: '999999999',
+      correo: `editado_${id}@email.com`,
+      tipoConsulta: 'soporte',
+      detalleConsulta: 'editado desde JS'
+    })
+  })
+  .then(r => r.json())
+  .then(res => {
+    alert(res.mensaje || 'Actualizado');
+    obtenerBandidos();
+  })
+  .catch(err => console.error(err));
+}
+
+let editId = null;
+
+function abrirEditar(id, nombre, celular, correo){
+  editId = id;
+  document.getElementById('edit-name').value = nombre;
+  document.getElementById('edit-celular').value = celular;
+  document.getElementById('edit-correo').value = correo;
+
+  new bootstrap.Modal(document.getElementById('modalEditar')).show();
+}
+
+function guardarEdicion(){
+  fetch(`http://127.0.0.1:8000/api/editar-bandido/${editId}`, {
+    method: 'PUT',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      name: document.getElementById('edit-name').value,
+      celular: document.getElementById('edit-celular').value,
+      correo: document.getElementById('edit-correo').value
+    })
+  })
+  .then(r => r.json())
+  .then(() => obtenerBandidos());
+}
+
 </script>
 
 
